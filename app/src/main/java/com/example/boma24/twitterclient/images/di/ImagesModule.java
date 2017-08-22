@@ -44,6 +44,7 @@ public class ImagesModule {
         return new ImageAdapter(dataset, imageLoader, clickListener);
     }
 
+    //When this is used?
     @Provides
     @Singleton
     OnItemClickListener providesOnItemClickListener(){
@@ -66,18 +67,21 @@ public class ImagesModule {
         return new ImagesPresenterImpl(view, eventBus, interactor);
     }
 
+    //When this is used
     @Provides
     @Singleton
     ImagesView providesImageView(){
         return this.view;
     }
 
+    //Interactor
     @Provides
     @Singleton
     ImagesInteractor providesImageInteractor(ImagesRepository repository){
         return new ImagesInteractorImpl(repository);
     }
 
+    //repository
     @Provides
     @Singleton
     ImagesRepository providesImageRepository(EventBus eventBus, CustomTwitterApiClient client){
